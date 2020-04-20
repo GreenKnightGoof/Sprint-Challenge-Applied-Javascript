@@ -39,4 +39,4 @@ let headerContainer = document.querySelector('.header-container')
 headerContainer.appendChild(headerComponent())
 
 
-console.log(headerContainer);
+// console.log(headerContainer);

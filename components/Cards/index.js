@@ -28,23 +28,22 @@ axios.get(`https://lambda-times-backend.herokuapp.com/articles`)
         articleCards[property].map(element => {
             const cardsComponent = cardsMaker(
                 element.headline,
-                element.author,
+                // element.author,
+                // element.cardImgContainer,
+                element.authorPhoto,
+                element.authorName,
                 element.cardImg,
                 element.authorSpan,
             );
             cards.appendChild(cardsComponent)
+            console.log(element.authorSpan)
+            console.log(element.headline)
+            console.log(element)
         });
-
-
         // console.log(articleCards[property])
     }
-    
     console.log(response);
   })
-
-
-
-
   .catch(function (error) {
     // handle error
     console.log(error);
@@ -53,7 +52,7 @@ axios.get(`https://lambda-times-backend.herokuapp.com/articles`)
     // always executed
 });
 
-function cardsMaker(headlineData, authorData){
+function cardsMaker(headlineData, authorPhoto, authorName){
     let card = document.createElement('div')
     card.classList.add('card')
 
@@ -63,23 +62,25 @@ function cardsMaker(headlineData, authorData){
 
     let author = document.createElement('div')
     author.classList.add('author')
+    
+    let cardImgContainer = document.createElement('div')
+    cardImgContainer.classList.add('img-container')
 
-    let cardImg = document.createElement('div')
-    cardImg.classList.add('img-container')
-    cardImg.src = './assets.jpg';
+    let cardImg = document.createElement('img')
+    cardImg.src = authorPhoto;
 
     let authorSpan = document.createElement('span')
-    authorSpan.textContent = authorData;
+    authorSpan.textContent = authorName;
 
     card.appendChild(headline)
-    headline.appendChild(author)
-    author.appendChild(cardImg)
+    card.appendChild(author)
+    author.appendChild(cardImgContainer)
     author.appendChild(authorSpan)
-
+    cardImgContainer.appendChild(cardImg)
     return card;
 
-}
 
+}
 
 
 cardsMaker();
