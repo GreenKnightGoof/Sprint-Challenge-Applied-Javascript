@@ -30,13 +30,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+    DOM - Document Object Model. It is a W3C standard for accessing documents. It is a platform that is a also a language-neutral interface. This allows for developers to dynamically access and update the content, style, and structure of a document. 
+
 2. What is an event?
+
+    An event is any interaction that someone has with the browser. Anything from clicking on an element to simply moving the mouse is considered an event. 
 
 3. What is an event listener?
 
+    Event listeners are bits of code that wait for a particular event, such as 'keydown,' 'mouseover,' or 'mouseleave.' When the event is triggered a specific second argument is called and the function is executed.  
+
 4. Why would we convert a NodeList into an Array?
 
+    To use methods on it. Html Collections and Nodelists cannot execute array methods like .map, .forEach, etc.
+
 5. What is a component?
+
+    A component is a bit of code constructed to be re-used, dry, modular, and stand alone. It is a piece of a larger whole. 
 
 ### Git Set up
 
